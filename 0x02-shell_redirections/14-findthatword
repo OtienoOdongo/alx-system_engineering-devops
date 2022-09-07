@@ -1,2 +1,2 @@
-#!/bin/bash  
-greo -l "root" /etc/passwd
+#!/bin/bash
+grep "root" /etc/passwd
