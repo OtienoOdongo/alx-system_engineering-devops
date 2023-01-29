@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
 #bash script that lists all currently running processes
-echo "ps aux"
+echo "ps -axjf"
+
 
