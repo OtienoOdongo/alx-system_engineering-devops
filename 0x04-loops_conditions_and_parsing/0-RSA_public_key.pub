@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#displaying text of my ssh RSA public Key pair
+echo "SHA256:PLsSSlWPDBWkMQuZfV2R5loBrhbZ6SH9ORzOydpqK8c"
+
