@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#Displaying lsiting port bash script
+echo "sudo netstat -tunlp"
+
