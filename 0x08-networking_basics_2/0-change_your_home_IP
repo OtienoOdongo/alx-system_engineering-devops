@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+#writing a bash script that configures an UBUNTU server
+# Check if the script is being run as root
+if [ "$EUID" -ne 0 ]; then
+  echo "This script must be run as root."
+  exit 1
+fi
+# Create the hosts file if it doesn't exist
+if [ ! -f /etc/hosts ]; then
+  touch /etc/hosts
+fi
+# Check if localhost entry already exists
+if grep -q "127.0.0.2\tlocalhost" /etc/hosts; then
+  echo "localhost entry already exists."
+else
+  # Add localhost entry to the hosts file
+  echo "127.0.0.2\tlocalhost" >> /etc/hosts
+  echo "localhost entry added to the hosts file."
+fi
+# Check if facebook.com entry already exists
+if grep -q "8.8.8.8\tfacebook.com" /etc/hosts; then
+  echo "facebook.com entry already exists."
+else
+  # Add facebook.com entry to the hosts file
+  echo "8.8.8.8\tfacebook.com" >> /etc/hosts
+  echo "facebook.com entry added to the hosts file."
+fi
+

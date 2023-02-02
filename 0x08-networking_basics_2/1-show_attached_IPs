@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# Get a list of all active network interfaces
+interfaces=$(ifconfig | grep -Eo '^\w+')
+# Loop through each interface and get its IPv4 address
+for interface in $interfaces; do
+  # Get the IPv4 address of the current interface
+  ip=$(ifconfig $interface | grep -Eo 'inet [0-9\.]+' | cut -d' ' -f2)
+  # Only display the IP if it's not blank
+  if [ -n "$ip" ]; then
+    echo "$interface: $ip"
+  fi
+done
+
+
+
+
