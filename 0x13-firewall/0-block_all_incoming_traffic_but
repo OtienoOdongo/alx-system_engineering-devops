@@ -1,0 +1,15 @@
+#verifying ufw status
+sudo ufw status
+
+#Enabling ufw on Nginx web server (web-01)
+sudo ufw enable
+
+#setting up default policies i.e. closing all ports and only opening the required ones
+sudo ufw default allow outgoing
+sudo ufw default deny incoming 
+
+#allowing ssh
+sudo ufw allow 22
+
+#allowing both HTTP (port 80) and HTTPS (port 443) on the server 
+sudo ufw allow "Nginx Full"
