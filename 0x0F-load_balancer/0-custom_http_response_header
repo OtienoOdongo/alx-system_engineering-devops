@@ -2,10 +2,10 @@
 #install Nginx on web-01 server 
 #allow HTTP traffic to access Nginx web server
 
-sudo apt update
-sudo apt install nginx -y
-sudo ufw allow "Nginx HTTP"
-sudo sh -c 'echo "Hello World!" > /var/www/html/index.html'
-sudo sed -i 's|server_name _;|server_name _;\n\tadd_header X-Served-By $hostname;|g' /etc/nginx/sites-available/default
-sudo service nginx restart
-
+sudo apt-get update
+sudo apt-get -y install nginx
+sudo ufw allow 'Nginx HTTP'
+echo "Hello World!" > /var/www/html/index.html
+new_string="\t\tadd_header X-Served-By $(hostname);"
+sed -i "s/^\tlocation \/ {$/&\n$new_string/" /etc/nginx/sites-available/default
+service nginx restart
