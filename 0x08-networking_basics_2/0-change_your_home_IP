@@ -3,7 +3,8 @@
 #localhost resolved to 127.0.0.2
 #facebook.com resolved to 8.8.8.8
 
-cp /etc/hosts /etc/hosts.old
-echo -e "127.0.0.2\vlocalhost" > /etc/hosts.old
-echo -e "8.8.8.8\vfacebook.com" >> /etc/hosts.old
-cp -f /etc/hosts.old /etc/hosts
+sudo cp /etc/hosts /etc/hosts.old
+echo -e "127.0.0.2\tlocalhost" > /etc/hosts.old
+echo -e "8.8.8.8\tfacebook.com" >> /etc/hosts.old
+sudo cp -f /etc/hosts.old /etc/hosts
+
