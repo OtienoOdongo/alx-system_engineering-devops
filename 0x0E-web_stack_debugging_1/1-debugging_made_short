@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 #a shorter version of the script written in task 0
-sudo ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
-sudo service nginx restart
-pkill -SIGTERM nginx
+ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+service nginx restart
+rm /run/nginx.pid
