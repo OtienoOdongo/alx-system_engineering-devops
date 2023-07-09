@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 #Script  that configures nginx server by debugging it to port 80
-#-s, --symbolic : makes symbolic links
-#-f, --force : removes existing destination files
 
 sudo ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 sudo service nginx restart
+
