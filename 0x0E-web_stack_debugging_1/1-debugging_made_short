@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+#a shorter version of the script written in task 0
+ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+service nginx restart
+pkill -SIGTERM nginx
