@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+#allow port 8080
+sudo ufw allow 8080/tcp
+
+#Edit this file (it should be done before firewall section)
+sudo vim /etc/ufw/before.rules
+
+#ucomment IPv4 capability in this file
+sudo vim /etc/sysctl.conf
+
+#reload changes with this command
+sudo sysctl -p
+
+#restart the firewall to enable routing using the systemctl command
+sudo sysemctl restart ufw
+
+#verfify new setting if the port 8080 has been redirected to port 80
+sudo iptables -t nat -L -n -v
