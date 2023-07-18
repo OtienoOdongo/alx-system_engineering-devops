@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-#script that runs  whoami when user is passed as an argument
+#a script that runs  whoami when user is passed as an argument
 
 sudo -u "$1" whoami
