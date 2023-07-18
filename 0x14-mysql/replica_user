@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-
---creating replica user
-CREATE USER 'replica_user'@'%' IDENTIFIED BY 'replica_user_pwd';
-GRANT REPLICATION SLAVE ON *.* TO 'replica_user'@'%';
-FLUSH PRIVILEGES;
-SELECT user, Repl_slave_priv FROM mysql.user;
