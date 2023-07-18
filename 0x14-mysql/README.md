@@ -1,1 +1,1 @@
-Installing MySQL 
+MySQL 
