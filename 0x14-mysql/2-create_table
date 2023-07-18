@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+--creating database
+CREATE DATABASE tyrell_corp;
+
+--use database
+USE tyrell_corp;
+
+--create table
+CREATE TABLE nexus6(
+id INT NOT NULL,
+name VARCHAR(50) NOT NULL,
+nationality VARCHAR(60) NOT NULL,
+language VARCHAR(50) DEFAULT "English");
+
+--Insert values to the fields
+INSERT INTO nexus6 VALUE(1, "Kennedy Lettel", "Spanish", "Castellano");
+
+--checking all values in the field
+SELECT * FROM nexus6;
+
+--granting SELECT PERMISSION
+ GRANT SELECT ON nexus6 TO 'holberton_user'@'localhost';
