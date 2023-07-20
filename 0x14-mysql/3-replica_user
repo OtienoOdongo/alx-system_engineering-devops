@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+--creating replica user
+CREATE USER 'replica_user'@'%' IDENTIFIED BY 'Solfest@24nairobi$';
+
+GRANT REPLICATION SLAVE ON *.* TO 'replica_user'@'%';
+
+GRANT SELECT ON mysql.user TO 'holberton_user'@'localhost';
+
+FLUSH PRIVILEGES;
+
