@@ -16,12 +16,12 @@ def recurse(subreddit, hot_list=None):
         hot_list = []
 
     if not is_valid_subreddit(subreddit):
-        return []
+        return None
 
     url = f"https://www.reddit.com/r/{subreddit}/hot.json"
     headers = {"User-Agent": "Google chrome version  115.0.5790.11"}
 
-    response = requests.get(url, headers=headers)
+    response = requests.get(url, headers=headers, allow_redirects=False)
 
     # Checking if the request was successful
     if response.status_code == 200:
@@ -46,7 +46,7 @@ def is_valid_subreddit(subreddit):
     url = f"https://www.reddit.com/r/{subreddit}/about.json"
     headers = {"User-Agent": "Google chrome version  115.0.5790.11"}
 
-    response = requests.get(url, headers=headers)
+    response = requests.get(url, headers=headers, allow_redirects=False)
 
     # Check if the request was successful and the subreddit exists
     if response.status_code == 200:
