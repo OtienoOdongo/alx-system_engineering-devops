@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+curl -X GET \
+  -H "Content-Type: application/json" \
+  -H "DD-API-KEY: YOUR_API_KEY" \
+  -H "DD-APPLICATION-KEY: YOUR_APP_KEY" \
+  #copy paste the link below in a URL after doing so you will get the datadog_id
+  "https://api.datadoghq.com/api/v1/dashboard?api_key=YOUR_API_KEY&application_key=YOUR_APP_KEY"
