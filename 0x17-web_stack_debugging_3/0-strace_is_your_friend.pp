@@ -1,14 +1,6 @@
-# Define the file resource for the potentially problematic file
-file { '/etc/httpd/conf/httpd.conf': 
-  ensure => 'file',
-  owner  => 'root',               
-  group  => 'root',              
-  mode   => '0644',               
-  source => 'puppet:///modules/my_module/httpd.conf',
-  notify => Service['apache2'],    
+# fixing Apache 500 internal server error
 
-# Define the Apache service resource
-service { 'apache2':
-  ensure => 'running',
-  enable => true,
+exec { 'fix_php_extension issue':
+  command => "sudo sed -i 's/class-wp-locale.phpp/class-wp-locale.php/g' /var/www/html/wp-settings.php",
+  path    => '/bin/:/usr/bin/:/usr/local/bin/:/usr/sbin/'
 }
